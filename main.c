@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:39:05 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/11 15:15:54 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 15:26:14 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int	main(int argc, char **argv)
 		return (msg_error("Stack contains at least one duplicate\n"));
 	}
 	if (ft_lstsize(stack_a) == 3)
-	{
 		sort_three(&stack_a);
-		return (0);
-	}
-	large_sort(&stack_a, &stack_b);
+	else
+		large_sort(&stack_a, &stack_b);
+	ft_lstclear(&stack_b, &free);
+	ft_lstclear(&stack_a, &free);
 	return (0);
 }
