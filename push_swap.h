@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:37:16 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/11 15:21:00 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 22:06:40 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ int		push_cmd_a(t_list **stack_a, t_list **stack_b);
 int		push_cmd_b(t_list **stack_a, t_list **stack_b);
 int		find_pos_to_a(t_list *stack, int nb);
 int		find_pos_to_b(t_list *stack, int nb);
+
+void	calculated_push(t_list **stack_a, t_list **stack_b);
 #endif

@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:39:05 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/11 15:26:14 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 22:13:36 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	main(int argc, char **argv)
 		sort_three(&stack_a);
 	else
 		large_sort(&stack_a, &stack_b);
+	//print_list(stack_a);
 	ft_lstclear(&stack_b, &free);
 	ft_lstclear(&stack_a, &free);
 	return (0);

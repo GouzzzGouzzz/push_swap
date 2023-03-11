@@ -6,7 +6,7 @@
 #    By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:58:39 by nmorandi          #+#    #+#              #
-#    Updated: 2023/03/11 14:58:17 by gouz             ###   ########.fr        #
+#    Updated: 2023/03/11 22:24:32 by gouz             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ FILES=main.c			\
 	utils.c				\
 	free_func.c 		\
 	rules1.c 			\
+	rules2.c			\
 	check_stack.c 		\
 	ft_atoi_of.c		\
 	large_sort.c		\

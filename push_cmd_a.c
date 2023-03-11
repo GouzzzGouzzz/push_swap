@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:57:01 by nmorandi          #+#    #+#             */
-/*   Updated: 2023/03/11 15:21:50 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 23:32:13 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	push_max_a(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
 
-	index = get_max_index((*stack_a));
+	index = get_max_index((*stack_b));
 	if (index == 0)
 		push_x('b', stack_a, stack_b);
 	else if (index + 1 == ft_lstsize((*stack_a)))
@@ -37,7 +37,10 @@ static void	push_min_a(t_list **stack_a, t_list **stack_b)
 
 	index = get_max_index((*stack_b));
 	if (index == 0)
+	{
 		push_x('b', stack_a, stack_b);
+		rotate(stack_b, 'b');
+	}
 	else if (index + 1 == ft_lstsize((*stack_b)))
 	{
 		rev_rotate(stack_b, 'b');

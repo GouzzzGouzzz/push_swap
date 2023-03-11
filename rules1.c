@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 17:56:46 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/02 22:51:27 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 22:30:52 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	rotate(t_list **stack, char c)
 	last_temp->next = new_last;
 	if (c == 'b')
 		write(1, "rb\n", 3);
-	else
+	else if (c == 'a')
 		write(1, "ra\n", 3);
 }
 
@@ -67,7 +67,7 @@ void	rev_rotate(t_list **stack, char c)
 	(*stack) = new_first;
 	if (c == 'b')
 		write(1, "rrb\n", 4);
-	else
+	else if ( c == 'a')
 		write(1, "rra\n", 4);
 }
 
