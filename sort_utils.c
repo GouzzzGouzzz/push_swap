@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:14:00 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/07 19:59:51 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 15:20:49 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ int	get_max_index(t_list *stack)
 	return (index);
 }
 
-void	place_index(t_list **stack, int index, int size, char name)
+void	place_index(t_list **stack, int index, char name)
 {
-	if (index > size - index)
+	if (index > ft_lstsize(*stack) - index)
 	{
-		index = size - index;
+		index = ft_lstsize(*stack) - index;
 		while (index > 0)
 		{
 			rev_rotate(stack, name);

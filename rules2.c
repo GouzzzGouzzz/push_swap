@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:41:40 by nmorandi          #+#    #+#             */
-/*   Updated: 2023/02/22 04:11:35 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/11 15:22:40 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	swap((*stack_a));
-	swap((*stack_b));
+	swap((*stack_a), 'a');
+	swap((*stack_b), 'b');
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)

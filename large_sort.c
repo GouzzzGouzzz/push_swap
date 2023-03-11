@@ -3,30 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   large_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmorandi <nmorandi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:12:28 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/09 17:55:39 by nmorandi         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:21:32 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static void push_first(t_list **stack, t_list **stack_b)
+static void	push_first(t_list **stack, t_list **stack_b)
 {
 	int	to_push;
 
 	to_push = 2;
 	while (ft_lstsize((*stack)) > 3 && to_push-- > 0)
-		push_x('b',stack, stack_b);
-	if (ft_lstsize((*stack_b)) == 2)
+		push_x('b', stack, stack_b);
+	if (ft_lstsize(*stack_b) == 2)
 		if (*(int *)(*stack_b)->content < *(int *)(*stack_b)->next->content)
 			swap(stack_b, 'b');
-
 }
 
-void sort_three(t_list **stack)
+void	sort_three(t_list **stack)
 {
 	if (get_min_index((*stack)) == 0)
 	{
@@ -48,11 +47,11 @@ void sort_three(t_list **stack)
 	}
 }
 
-static	void b_to_a(t_list **stack, t_list **stack_b)
+static void	b_to_a(t_list **stack, t_list **stack_b)
 {
-	int nb;
+	int	nb;
 	int	curr;
-	int ret;
+	int	ret;
 
 	ret = 0;
 	while ((*stack_b))
@@ -63,21 +62,18 @@ static	void b_to_a(t_list **stack, t_list **stack_b)
 		if (ret != 1)
 		{
 			if (curr > nb && *(int *)ft_lstlast((*stack))->content < nb)
-			{
 				push_x('a', stack, stack_b);
-				//rev_rotate(stack, 'a');
-			}
 			else
-				rotate(stack, 'a');
+				place_index(stack, find_pos_to_a((*stack), nb), 'a');
 		}
 	}
 }
 
-static void a_to_b(t_list **stack, t_list **stack_b)
+static void	a_to_b(t_list **stack, t_list **stack_b)
 {
-	int curr;
-	int first_b;
-	int ret;
+	int	curr;
+	int	first_b;
+	int	ret;
 
 	ret = 0;
 	while (ft_lstsize(*(stack)) > 3 && already_sorted((*stack)))
@@ -90,10 +86,7 @@ static void a_to_b(t_list **stack, t_list **stack_b)
 			if (curr > first_b)
 				push_x('b', stack, stack_b);
 			else
-			{
-				//print_list((*stack_b));
-				rotate(stack_b ,'b');
-			}
+				place_index(stack_b, find_pos_to_b((*stack_b), curr), 'b');
 		}
 	}
 }
@@ -102,20 +95,20 @@ int	large_sort(t_list **stack, t_list **stack_b)
 {
 	if (ft_lstsize((*stack)) == 5)
 	{
-		push_first(stack,stack_b);
+		push_first(stack, stack_b);
 		if (already_sorted((*stack)) != -1)
 			sort_three(stack);
 		b_to_a(stack, stack_b);
-		place_index(stack, get_min_index(*stack), ft_lstsize((*stack)), 'a');
+		place_index(stack, get_min_index(*stack), 'a');
 		return (1);
 	}
-	push_first(stack,stack_b);
+	push_first(stack, stack_b);
 	a_to_b(stack, stack_b);
 	if (already_sorted((*stack)) != -1)
 		sort_three(stack);
-	place_index(stack_b, get_max_index(*stack_b), ft_lstsize((*stack_b)), 'b');
+	place_index(stack_b, get_max_index(*stack_b), 'b');
 	//print_list((*stack));
 	//print_list((*stack_b));
 	b_to_a(stack, stack_b);
-	place_index(stack, get_min_index(*stack), ft_lstsize((*stack)), 'a');
+	place_index(stack, get_min_index(*stack), 'a');
 }

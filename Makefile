@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmorandi <nmorandi@student.42.fr>          +#+  +:+       +#+         #
+#    By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:58:39 by nmorandi          #+#    #+#              #
-#    Updated: 2023/03/09 16:57:41 by nmorandi         ###   ########.fr        #
+#    Updated: 2023/03/11 14:58:17 by gouz             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ FILES=main.c			\
 	sort_utils.c		\
 	push_cmd_a.c		\
 	push_cmd_b.c		\
+	sort_utils2.c 		\
 
 OBJ=$(FILES:.c=.o)
 

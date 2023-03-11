@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmorandi <nmorandi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:39:05 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/09 18:05:50 by nmorandi         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:15:54 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ int	main(int argc, char **argv)
 	if (already_sorted(stack_a) == -1)
 	{
 		ft_lstclear(&stack_a, &free);
-		//return (msg_error("Stack is already sorted\n"));
-		return (0);
+		return (msg_error("Stack is already sorted\n"));
 	}
 	if (check_double(stack_a) == -1)
 	{
@@ -70,8 +69,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	large_sort(&stack_a, &stack_b);
-	//print_list(stack_a);
-	//if (already_sorted(stack_a) == -1)
-	//	printf("TRILLER");
 	return (0);
 }

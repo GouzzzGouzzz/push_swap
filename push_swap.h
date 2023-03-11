@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmorandi <nmorandi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:37:16 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/09 17:04:23 by nmorandi         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:21:00 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_atoi_of(const char *nptr, int *flag);
 char	*free_strjoin(char *s1, char *s2, int to_free);
 char	*add_arg(char *curr_arg, int max_len, int index, char *add_arg);
 char	*join_arg(int argc, char **argv, char *full_arg);
-void	place_index(t_list **stack, int index, int size, char name);
+void	place_index(t_list **stack, int index, char name);
 int		get_min_index(t_list *stack);
 int		get_max_index(t_list *stack);
 int		get_minmax_value(t_list *stack, int min);
@@ -44,9 +44,11 @@ void	ss(t_list **stack_a, t_list **stack_b);
 void	print_list(t_list *start);
 
 /* Sort */
-int	large_sort(t_list **stack, t_list **stack_b);
+int		large_sort(t_list **stack, t_list **stack_b);
 void	sort_three(t_list **stack);
 
-int	push_cmd_a(t_list **stack_a, t_list **stack_b);
-int	push_cmd_b(t_list **stack_a, t_list **stack_b);
+int		push_cmd_a(t_list **stack_a, t_list **stack_b);
+int		push_cmd_b(t_list **stack_a, t_list **stack_b);
+int		find_pos_to_a(t_list *stack, int nb);
+int		find_pos_to_b(t_list *stack, int nb);
 #endif
