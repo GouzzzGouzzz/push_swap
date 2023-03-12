@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:12:28 by gouz              #+#    #+#             */
-/*   Updated: 2023/03/11 23:36:28 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/12 16:09:50 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,10 @@ static void	a_to_b(t_list **stack, t_list **stack_b)
 			if (curr > first_b)
 				push_x('b', stack, stack_b);
 			else
-				place_index(stack_b, find_pos_to_b((*stack_b), curr), 'b');
-				//calculated_push(stack, stack_b);
+			{
+				if (calculated_push(stack, stack_b) == -1)
+					place_index(stack_b, find_pos_to_b((*stack_b), curr), 'b');
+			}
 		}
 	}
 }
@@ -107,8 +109,10 @@ int	large_sort(t_list **stack, t_list **stack_b)
 	a_to_b(stack, stack_b);
 	place_index(stack_b, get_max_index(*stack_b), 'b');
 	//print_list((*stack_b));
-	if (already_sorted((*stack)) != -1)
+	if (already_sorted(*stack) != -1 && ft_lstsize(*stack))
 		sort_three(stack);
+	//printf("tri\n");
+	//print_list((*stack));
 	b_to_a(stack, stack_b);
 	place_index(stack, get_min_index(*stack), 'a');
 	//print_list((*stack));

@@ -6,7 +6,7 @@
 /*   By: gouz <gouz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:57:01 by nmorandi          #+#    #+#             */
-/*   Updated: 2023/03/11 23:32:13 by gouz             ###   ########.fr       */
+/*   Updated: 2023/03/12 16:03:28 by gouz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	push_max_a(t_list **stack_a, t_list **stack_b)
 	}
 	else
 	{
-		place_index(stack_b, index + 1, 'b');
+		place_index(stack_b, index, 'b');
 		push_x('b', stack_a, stack_b);
 	}
 }
